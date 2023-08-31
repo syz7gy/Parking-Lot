@@ -11,6 +11,24 @@ public class VehiculoDAO {
 		lista = new MyLinkedList<>();
 	}
 	
+	public void create(Object o) {
+		lista.add((VehiculoDTO)o);
+	}
+	
+	public boolean delete(int n) {
+		try {
+			lista.remove(n);
+			return true;
+		} catch (Exception e) {
+			System.out.println("No se ha podido eliminar");
+			return false;
+		}
+	}
+	
+	public String read() {
+		return lista.toString();
+	}
+	
 	
 
 }

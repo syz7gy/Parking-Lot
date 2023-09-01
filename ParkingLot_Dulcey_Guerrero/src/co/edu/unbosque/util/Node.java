@@ -1,7 +1,10 @@
 package co.edu.unbosque.util;
 
-public class Node<E> {
+import java.io.Serializable;
+
+public class Node<E> implements Serializable{
 	
+	private static final long serialVersionUID = 5358290135664473628L;
 	private E info;
 	private Node<E> next;
 	
@@ -37,7 +40,7 @@ public class Node<E> {
 
 	@Override
 	public String toString() {
-		return "Node [info=" + info + ", next=" + next + "]";
+		return "Node [info=" + info + ", next=" + next + "]" + "\n";
 	}
 	
 	

@@ -11,17 +11,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class VentanaAgregar extends JFrame {
+public class VentanaEliminar extends JFrame {
 
 	private JLabel foto1;
 	private Image imagen1, imagen2, imagen3;
 	private Icon icon1, icon2, icon3;
 	private JPanel panel;
-	private JButton btn1, btn2, btn3, btn4;
-	private JTextField placa, tipo, horaEntrada, horaSalida;
+	private JButton btn1, btn2;
+	private JTextField eliminar;
 
-	public VentanaAgregar() {
-		setTitle("Agregar");
+	public VentanaEliminar() {
+		setTitle("Eliminar");
 		setBounds(600, 200, 1280, 720);
 		this.setSize(1280, 720);
 		setResizable(false);
@@ -35,49 +35,34 @@ public class VentanaAgregar extends JFrame {
 		panel.setBounds(600, 200, 550, 700);
 
 		// IMAGENES
-		imagen1 = new ImageIcon("src/co/edu/unbosque/view/images/fondo2.png").getImage();
+		imagen1 = new ImageIcon("src/co/edu/unbosque/view/images/fondo3.png").getImage();
 		icon1 = new ImageIcon(imagen1.getScaledInstance(1280, 720, Image.SCALE_DEFAULT));
 		foto1 = new JLabel();
 		foto1.setBounds(0, 0, 1280, 720);
 		foto1.setIcon(icon1);
-		
+
 		// TEXT
-		placa = new JTextField();
-		placa.setBounds(117, 275, 300, 30);
-		placa.setBackground(Color.WHITE);
-		
-		tipo = new JTextField();
-		tipo.setBounds(117, 413, 300, 30);
-		tipo.setBackground(Color.WHITE);
-		
-		horaEntrada = new JTextField();
-		horaEntrada.setBounds(864, 275, 300, 30);
-		horaEntrada.setBackground(Color.WHITE);
-		
-		horaSalida = new JTextField();
-		horaSalida.setBounds(864, 413, 300, 30);
-		horaSalida.setBackground(Color.WHITE);
-		
-		// BOTONES
-		imagen2 = new ImageIcon("src/co/edu/unbosque/view/images/boton5.png").getImage();
+		eliminar = new JTextField();
+		eliminar.setBounds(490, 410, 300, 30);
+		eliminar.setBackground(Color.WHITE);
+
+		// BOTONES	
+		imagen2 = new ImageIcon("src/co/edu/unbosque/view/images/boton2.png").getImage();
 		icon2 = new ImageIcon(imagen2.getScaledInstance(195, 67, Image.SCALE_SMOOTH));
 		btn1 = new JButton(icon2);
-		btn1.setBounds(542, 581, 195, 67);
+		btn1.setBounds(542, 504, 195, 67);
 		btn1.setBorderPainted(false);
 		btn1.setContentAreaFilled(false);
 		
-		imagen3 = new ImageIcon("src/co/edu/unbosque/view/images/boton1.png").getImage();
+		imagen3 = new ImageIcon("src/co/edu/unbosque/view/images/boton5.png").getImage();
 		icon3 = new ImageIcon(imagen3.getScaledInstance(195, 67, Image.SCALE_SMOOTH));
 		btn2 = new JButton(icon3);
-		btn2.setBounds(542, 504, 195, 67);
+		btn2.setBounds(542, 581, 195, 67);
 		btn2.setBorderPainted(false);
 		btn2.setContentAreaFilled(false);
-
+		
 		// ADD
-		add(placa);
-		add(tipo);
-		add(horaEntrada);
-		add(horaSalida);
+		add(eliminar);
 		add(btn1);
 		add(btn2);
 		add(foto1);
@@ -165,51 +150,11 @@ public class VentanaAgregar extends JFrame {
 		this.btn2 = btn2;
 	}
 
-	public JButton getBtn3() {
-		return btn3;
+	public JTextField getEliminar() {
+		return eliminar;
 	}
 
-	public void setBtn3(JButton btn3) {
-		this.btn3 = btn3;
-	}
-
-	public JButton getBtn4() {
-		return btn4;
-	}
-
-	public void setBtn4(JButton btn4) {
-		this.btn4 = btn4;
-	}
-
-	public JTextField getPlaca() {
-		return placa;
-	}
-
-	public void setPlaca(JTextField placa) {
-		this.placa = placa;
-	}
-
-	public JTextField getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(JTextField tipo) {
-		this.tipo = tipo;
-	}
-
-	public JTextField getHoraEntrada() {
-		return horaEntrada;
-	}
-
-	public void setHoraEntrada(JTextField horaEntrada) {
-		this.horaEntrada = horaEntrada;
-	}
-
-	public JTextField getHoraSalida() {
-		return horaSalida;
-	}
-
-	public void setHoraSalida(JTextField horaSalida) {
-		this.horaSalida = horaSalida;
+	public void setEliminar(JTextField eliminar) {
+		this.eliminar = eliminar;
 	}
 }

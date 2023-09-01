@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.view.VentanaAgregar;
 import co.edu.unbosque.view.VentanaEliminar;
 import co.edu.unbosque.view.VentanaMostrar;
@@ -94,12 +96,14 @@ public class Controller implements ActionListener {
 		}
 
 		case "boton2vista2": {
-
-			break;
+			
+			JOptionPane.showMessageDialog(null, "El vehículo ha sido agregado con exito!", "Agregar vehículo", JOptionPane.INFORMATION_MESSAGE);
+            break;
 		}
 
 		case "boton1vista3": {
-
+			
+			JOptionPane.showMessageDialog(null, "El vehículo ha sido eliminado con exito!", "Eliminar vehículo", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		}
 

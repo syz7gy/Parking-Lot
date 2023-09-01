@@ -46,7 +46,7 @@ public class FileHandler {
 		file = new File("src/co/edu/unbosque/model/persistance/" + nombre_archivo);
 		try {
 			escritor = new PrintWriter(file);
-			escritor.write(contenido_escribir);
+			escritor.write(contenido_escribir + "\n");
 			escritor.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Error de escritura: Archivo no encontrado.");
@@ -65,7 +65,7 @@ public class FileHandler {
 		file = new File("src/co/edu/unbosque/model/persistance/" + nombre_archivo);
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(file));
-			oos.writeObject(o);
+			oos.writeObject(o + "\n");
 			oos.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("(Serializado/Salida) Error de escritura: Archivo no encontrado.");

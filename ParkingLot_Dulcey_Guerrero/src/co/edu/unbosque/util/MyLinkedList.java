@@ -128,7 +128,6 @@ public class MyLinkedList<E> implements Serializable{
 	
 	public void set(int i, E info) {
 		Node<E> currentNode = this.first;
-//		Node<E> newNode = new Node<>(info);
 		
 		int infoPos = -1;
 
@@ -143,29 +142,19 @@ public class MyLinkedList<E> implements Serializable{
 
 	}
 	
-	public void remove(int i) {
-		Node<E> currentNode = this.first;
-		Node<E> previous = new Node<>();
-		
-		int infoPos = -1;
-		int size = size();
-
-		if (!isEmpty()) {
-			infoPos = 0;
-			while (currentNode != null && infoPos<i-1) {
-				infoPos++;
-				previous = currentNode.getNext();
-			}
-			currentNode = previous.getNext();
-			Node<E> nextNode = currentNode.getNext();
-			int n = infoPos+1;
-			while(n < size) {
-				n++;
-				E info = nextNode.getInfo();
-				currentNode.setInfo(info);
-			}
+	public E remove(int n) {
+		if(n<0 || n>=size())throw  new ArrayIndexOutOfBoundsException();
+		E eliminate=null;
+		if(n==0) {
+			eliminate=this.first.getInfo();
+			if(this.first.getNext()!=null)  this.first=this.first.getNext();
+			else this.first=null;
 		}
-
+		else {
+			eliminate=get(n).getInfo();
+			get(n-1).setNext(get(n).getNext());
+		}
+		return eliminate;
 	}
 	
 	public E extractLast() {

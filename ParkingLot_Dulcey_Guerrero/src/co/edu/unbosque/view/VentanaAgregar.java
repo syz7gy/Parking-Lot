@@ -43,18 +43,22 @@ public class VentanaAgregar extends JFrame {
 		
 		// TEXT
 		placa = new JTextField();
+		placa.setText("AAA-123");
 		placa.setBounds(117, 275, 300, 30);
 		placa.setBackground(Color.WHITE);
 		
 		tipo = new JTextField();
+		tipo.setText("Carro/Moto/Camión");
 		tipo.setBounds(117, 413, 300, 30);
 		tipo.setBackground(Color.WHITE);
 		
 		horaEntrada = new JTextField();
+		horaEntrada.setText("hh:mm:ss");
 		horaEntrada.setBounds(864, 275, 300, 30);
 		horaEntrada.setBackground(Color.WHITE);
 		
 		horaSalida = new JTextField();
+		horaSalida.setText("hh:mm:ss");
 		horaSalida.setBounds(864, 413, 300, 30);
 		horaSalida.setBackground(Color.WHITE);
 		

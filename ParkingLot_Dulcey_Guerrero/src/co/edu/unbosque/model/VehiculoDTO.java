@@ -1,9 +1,11 @@
 package co.edu.unbosque.model;
 
+import java.io.Serializable;
 import java.sql.Time;
 
-public class VehiculoDTO {
+public class VehiculoDTO implements Serializable{
 	
+	private static final long serialVersionUID = -1127445587468588330L;
 	private String placa;
 	private String tipo;
 	private Time horaEntrada;

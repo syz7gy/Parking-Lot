@@ -1,9 +1,11 @@
 package co.edu.unbosque.util;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
-public class MyLinkedList<E> implements Iterable<E>{
+public class MyLinkedList<E> implements Iterable<E>, Serializable{
 
+	private static final long serialVersionUID = 7840129544202328722L;
 	private Node<E> first;
 
 	public MyLinkedList() {

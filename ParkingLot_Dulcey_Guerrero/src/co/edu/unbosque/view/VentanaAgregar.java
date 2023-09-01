@@ -81,6 +81,8 @@ public class VentanaAgregar extends JFrame {
 		add(btn1);
 		add(btn2);
 		add(foto1);
+		
+		setVisible(false);
 	}
 
 	public JLabel getFoto1() {

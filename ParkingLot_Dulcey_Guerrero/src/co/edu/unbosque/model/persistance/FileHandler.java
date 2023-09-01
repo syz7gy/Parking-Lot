@@ -70,6 +70,11 @@ public class FileHandler {
 		} catch (FileNotFoundException e) {
 			System.out.println("(Serializado/Salida) Error de escritura: Archivo no encontrado.");
 			e.printStackTrace();
+			try {
+				File.createTempFile(nombre_archivo, nombre_archivo, file);
+			} catch (IOException io) {
+				io.printStackTrace();
+			}
 		} catch (IOException e) {
 			System.out.println("(Serializado/Salida) Error de escritura: Revise permisos.");
 			e.printStackTrace();
@@ -83,6 +88,7 @@ public class FileHandler {
 			ois = new ObjectInputStream(new FileInputStream(file));
 			Object o = ois.readObject();
 			ois.close();
+			return o;
 		} catch (FileNotFoundException e) {
 			System.out.println("(Serializado/Entrada) Error de lectura: Archivo no encontrado");
 			e.printStackTrace();
@@ -106,6 +112,25 @@ public class FileHandler {
 			e.printStackTrace();
 		}
 		return prop;
+	}
+	
+	public static boolean isEmptyFile(String nombre_archivo) {
+		file = new File("src/co/edu/unbosque/model/persistance/" + nombre_archivo);
+		boolean rta = false;
+		try {
+			ois = new ObjectInputStream(new FileInputStream(file));
+			Object o = ois.readObject();
+			if(o == null) {
+				rta = true;
+			} else {
+				rta = false;
+			}
+			ois.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rta;
+		
 	}
 
 	

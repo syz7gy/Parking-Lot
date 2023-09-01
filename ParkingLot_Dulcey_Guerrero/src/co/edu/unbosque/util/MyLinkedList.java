@@ -1,9 +1,11 @@
 package co.edu.unbosque.util;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
-public class MyLinkedList<E> implements Iterable<E>{
+public class MyLinkedList<E> implements Serializable{
 
+	private static final long serialVersionUID = 7840129544202328722L;
 	private Node<E> first;
 
 	public MyLinkedList() {
@@ -31,7 +33,12 @@ public class MyLinkedList<E> implements Iterable<E>{
 	public void add(E info) {
 		Node<E> newNode = new Node<>(info);
 		Node<E> lastNode = getLastNode();
-		lastNode.setNext(newNode);
+		if(this.first!=null) {
+			lastNode.setNext(newNode);
+		} else  {
+			this.first = newNode;
+		}
+		
 	}
 
 	public void insert(E info, Node<E> previous) {
@@ -183,31 +190,12 @@ public class MyLinkedList<E> implements Iterable<E>{
 		String textList = "";
 		Node<E> current = this.first;
 		while (current != null) {
-			textList += current.getInfo().toString();
+			textList += current.getInfo().toString() + "\n";
+			current = current.getNext();
 		}
 		return textList.toString();
 	}
 
-	@Override
-	public Iterator<E> iterator() {
-		Iterator<E> i = new Iterator<E>() {
-
-			@Override
-			public boolean hasNext() {
-				if(!isEmpty()){
-					return true;
-				}else {
-					return false;
-				}
-			}
-
-			@Override
-			public E next() {
-				return first.getNext().getInfo();
-			}
-		};
-		return i;
-	}
 
 	
 }

@@ -48,7 +48,7 @@ public class VentanaAgregar extends JFrame {
 		placa.setBackground(Color.WHITE);
 		
 		tipo = new JTextField();
-		tipo.setText("Carro/Moto/Camión");
+		tipo.setText("Carro/Moto/Camion");
 		tipo.setBounds(117, 413, 300, 30);
 		tipo.setBackground(Color.WHITE);
 		

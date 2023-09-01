@@ -71,20 +71,21 @@ public class VehiculoDAO {
 	}
 	
 	public String read() {
-		MyLinkedList<VehiculoDTO> fromFile = new MyLinkedList<>();
-		String content = FileHandler.leerSerializado("Parking.pajp").toString();
-		String[] lines = content.split("\n");
-		for (String line : lines) {
-			String[] attrs = line.split(";");
-			String placa = attrs[0];
-			String tipo = attrs[1];
-			String[] ingreso = attrs[2].split(":");
-			String[] salida = attrs[3].split(":");
-			Time horaIngreso = new Time(Integer.parseInt(ingreso[0]), Integer.parseInt(ingreso[1]), Integer.parseInt(ingreso[2]));
-			Time horaSalida = new Time(Integer.parseInt(salida[0]), Integer.parseInt(salida[1]), Integer.parseInt(salida[2]));
-			fromFile.add(new VehiculoDTO(placa, tipo, horaIngreso, horaSalida));
-		}
-		return fromFile.toString();
+//		MyLinkedList<VehiculoDTO> fromFile = new MyLinkedList<>();
+//		String content = FileHandler.leerSerializado("Parking.pajp").toString();
+//		String[] lines = content.split("\n");
+//		for (String line : lines) {
+//			String[] attrs = line.split(";");
+//			String placa = attrs[0];
+//			String tipo = attrs[1];
+//			String[] ingreso = attrs[2].split(":");
+//			String[] salida = attrs[3].split(":");
+//			Time horaIngreso = new Time(Integer.parseInt(ingreso[0]), Integer.parseInt(ingreso[1]), Integer.parseInt(ingreso[2]));
+//			Time horaSalida = new Time(Integer.parseInt(salida[0]), Integer.parseInt(salida[1]), Integer.parseInt(salida[2]));
+//			fromFile.add(new VehiculoDTO(placa, tipo, horaIngreso, horaSalida));
+//		}
+//		return fromFile.toString();
+		return lista.toString();
 	}
 	
 	
